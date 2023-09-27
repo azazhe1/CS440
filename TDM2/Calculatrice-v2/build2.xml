@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Calculatrice-v2" basedir="." default = "run">
+	
+	<target name="compile" depends="clean">
+		<mkdir dir="build/classes"/>
+		<javac srcdir="src" destdir="build/classes" includeantruntime="false"/>
+		
+	</target>
+	
+	<target name="package" depends="compile">
+		<mkdir dir="jar"/>
+		<jar destfile="jar/composite-v2.jar" basedir="build/classes">
+		
+			<manifest>
+				<attribute name="Main-Class" value="fr.esisar.calculatrice.Calculateur"/>
+			</manifest>
+		</jar>
+		
+		
+	</target>
+	
+	<target name="run" depends="package">
+            <java jar="jar/composite-v2.jar" fork="true"/>
+    </target>
+	
+    <target name="clean">
+            <delete dir="build"/>
+    		<delete dir="jar"/>
+    </target>
+	
+</project>
