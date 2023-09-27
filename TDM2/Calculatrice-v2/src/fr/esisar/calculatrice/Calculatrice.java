@@ -10,7 +10,7 @@ import fr.esisar.operations.Soustraire;
 
 public class Calculatrice {
 	
-	ArrayList<Operation> liste = new ArrayList<>();
+	Set<Operation> liste = new HashSet<>();// Car c'est {unique} dans le diagrame de classe
 	
 	public Calculatrice() {
 		liste.add(new Ajouter());
